@@ -6,7 +6,7 @@ from django.db import models
 class Buyer(models.Model):
     name = models.CharField(max_length=100)  # username аккаунта
     balance = models.DecimalField(max_digits=10, decimal_places=2)  # баланс
-    age = models.IntegerField()  # возраст
+    age = models.PositiveIntegerField()  # возраст - только положительное значение
 
 
 # 2. Модель представляющая игру
@@ -17,3 +17,4 @@ class Game(models.Model):
     description = models.TextField()  # описание игры
     age_limited = models.BooleanField(default=False)  # ограничение возраста 18+
     buyer = models.ManyToManyField(Buyer, related_name='games')
+
