@@ -1,0 +1,24 @@
+{% extends "menu.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block pagename %}
+        <h1>Игры</h1>
+    {% endblock %}
+
+    {% block menu %}
+        {{ block.super }}
+    {% endblock %}
+
+    {% block content  %}
+        {% for game in games_list %}
+            <p>{{ game.title }} | {{ game.description }} | {{ game.cost }}<button>{{ text }}</button></p>
+        {% endfor %}
+    {% endblock %}
+
+</body>
+</html>

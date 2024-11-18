@@ -1,0 +1,31 @@
+{% extends "menu.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block pagename %}
+        <h1>Корзина</h1>
+    {% endblock %}
+
+    {% block menu %}
+        {{ block.super }}
+    {% endblock %}
+
+    {% block content  %}
+        <h1>Извините, ваша корзина пуста</h1>
+        <p><h3>А если бы в ней были игры, то Вам осталось бы только:</h3></p>
+        <h4>{{text1}}
+            <button>Наличными</button>
+            <button>Bitcoin</button>
+        </h4>
+        <h4>{{text2}}
+            <button>файл электронной почтой</button>
+            <button>CD голубиной почтой</button>
+        </h4>
+    {% endblock %}
+
+</body>
+</html>
