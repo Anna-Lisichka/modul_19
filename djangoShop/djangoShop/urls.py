@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from task1.views import *   # импорт функций для регистрации
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('platform/games', games),  # запуск страницы с играми
+    path('platform/cart', cart),  # запуск страницы корзины
+    path('platform/', home_page),  # запуск главной страницы
+    path('', sign_up_by_django),  # маршрут для запуска страницы-регистрации
+
 ]
